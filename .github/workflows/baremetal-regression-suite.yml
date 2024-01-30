@@ -118,7 +118,7 @@ jobs:
           previousVersion = latestVersion
         else:
           print(f"Latest version: {latestVersion}, type of third element: {type(latestVersion[2])}")
-          print(f"{latestVersion[0]}, {latestVersion[1]}, {int(latestVersion[2]} - 2")
+          print(f"{latestVersion[0]}, {latestVersion[1]}, {int(latestVersion[2])} - 2")
           previousVersion = [latestVersion[0], latestVersion[1], int(latestVersion[2]) - 2]
           print(f"{previousVersion}")
 
