@@ -118,7 +118,7 @@ jobs:
           previousVersion = latestVersion
         else:
           latestVersion = list(map(int, latestVersion.split('.')))
-          previousVersion = [latestVersion[0], latestVersion[1], latestVersion[2] - 2]
+          previousVersion = [latestVersion[0], latestVersion[1]-2, latestVersion[2] ]
           print(f"{previousVersion}")
           
         previousVersionStr = ".".join(map(str, previousVersion))
