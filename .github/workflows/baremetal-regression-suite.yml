@@ -112,16 +112,15 @@ jobs:
         branch_name = 'master'
 
         latestVersion = getLatestBranchVersion(branch_name)
-
+        
         if latestVersion[2] == 0:
           print('Latest version is a new minor. Setting previous version to latest version')
           previousVersion = latestVersion
         else:
-          print(f"Latest version: {latestVersion}, type of third element: {type(latestVersion[2])}")
-          print(f"{latestVersion[0]}, {latestVersion[1]}, {int(latestVersion[2])} - 2")
-          previousVersion = [latestVersion[0], latestVersion[1], int(latestVersion[2]) - 2]
+          latestVersion = list(map(int, latestVersion.split('.')))
+          previousVersion = [latestVersion[0], latestVersion[1], latestVersion[2] - 2]
           print(f"{previousVersion}")
-
+          
         previousVersionStr = ".".join(map(str, previousVersion))
         previousVersionURL = 'https://cdn.hpccsystems.com/releases/CE-Candidate-' + previousVersionStr \
                            + '/bin/platform/hpccsystems-platform-community_' + previousVersionStr + '-1jammy_amd64_withsymbols.deb'
